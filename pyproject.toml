@@ -1,0 +1,59 @@
+[project]
+name = "Harmoland"
+version = "0.1.0"
+authors = [
+    {name = "Redlnn",email = "w731347477@gmail.com"},
+]
+dependencies = [
+    "mcdreforged>=2.9.1",
+    "orjson>=3.9.0",
+    "loguru>=0.6.0",
+    "launart>=0.6.3",
+    "kayaku>=0.5.2",
+    "graia-saya>=0.0.17",
+    "graia-scheduler>=0.1.5",
+    "graia-broadcast>=0.19.2",
+    "creart>=0.2.2",
+    "creart-graia>=0.1.5",
+    "graiax-shortcut>=0.3.0",
+    "prompt-toolkit>=3.0.38",
+    "aiohttp[speedups]>=3.8.4",
+]
+
+requires-python = ">=3.10"
+license = {text = "AGPL-3.0-only"}
+
+[build-system]
+requires = ["pdm-backend"]
+build-backend = "pdm.backend"
+
+[tool.pdm]
+
+[tool.pdm.dev-dependencies]
+dev = [
+    "black",
+    "flake8",
+    "isort",
+]
+
+[tool.pdm.build]
+includes = []
+
+[[tool.pdm.source]]
+name = "tsinghua"
+url = "https://pypi.tuna.tsinghua.edu.cn/simple"
+verify_ssl = true
+
+[[tool.pdm.source]]
+name = "aliyun"
+url = "https://mirrors.aliyun.com/pypi/simple/"
+verify_ssl = true
+
+[tool.black]
+line-length = 120
+target-version = ['py310', 'py311']
+# skip-string-normalization = true
+safe = true
+
+[tool.isort]
+profile = "black"
